@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Item ({ item }) {
     return(
-    <Link to={'/producto/${item.id}'}>
+    <Link to={`/producto/${item.id}`}>
         <div key={item.id} className="row row-cols-1 row-cols-md-3 g-4 ">
                     <div className="col p-3 mb-5 mt-4">
                         <div className="card h-100">

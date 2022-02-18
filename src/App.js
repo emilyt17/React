@@ -17,14 +17,21 @@ function App() {
       
       <main>
       <Routes>
-      <Route 
-      path ="/" 
-      element ={<ItemListContainer />}
-      />
-      <Route 
-      path ="/producto/:idProducto" 
-      element ={<ItemDetailContainer />}
-      />
+        <Route 
+          path ="/" 
+          element ={<ItemListContainer />}
+        />
+        <Route 
+          path ="/category/:categoryName" 
+          element ={<ItemListContainer  greetings="EMIT+"/>}
+        />
+        
+        <Route 
+          path ="/producto/:idProducto" 
+          element ={<ItemDetailContainer />}
+        />
+      
+        <Route path="*" element={<ItemListContainer />} />
       </Routes>
       </main>
       

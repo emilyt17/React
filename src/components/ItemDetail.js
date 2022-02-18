@@ -13,6 +13,7 @@ export default function ItemDetail ({item}){
                             </div>
                             <div className="card-footer">
                              <small className="text-muted">{item.price} </small>
+                             <button className="btn btn-Dark"> Comprar </button>
                             </div>
                         </div>
                     </div>
