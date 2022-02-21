@@ -1,6 +1,17 @@
+import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount"
+import React, { useState} from "react";
 
 
 export default function ItemDetail ({item}){
+    const [conter , setConter] = useState();
+
+    function addItem(newItem){
+        console.log(newItem);
+        setConter(newItem);
+    
+    }
+
     return (
         <div>
            <div key={item.id} className="row row-cols-1 row-cols-md-3 g-4 ">
@@ -13,8 +24,12 @@ export default function ItemDetail ({item}){
                             </div>
                             <div className="card-footer">
                              <small className="text-muted">{item.price} </small>
-                             <button className="btn btn-Dark"> Comprar </button>
-                            </div>
+                             {
+                                 ! conter ?
+                             <ItemCount stock ={5} initial={1} onAdd={addItem} /> :
+                             <Link to ="/cart"> Ir al carrito</Link>
+                             }
+                             </div>
                         </div>
                     </div>
                 </div>

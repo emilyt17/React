@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "./ItemCount"
+
 import { getProduct } from "../api/api";
 import ItemList from "./ItemList";
 import { useParams} from "react-router-dom";
@@ -34,7 +34,7 @@ function ItemListContainer () {
     return (
         <div>
           {products.length > 0 ? <ItemList products={products} /> : <p>Cargando. </p> }
-          <ItemCount stock ={5} initial={1} onAdd={addItem} />
+
         </div>
         )
     
