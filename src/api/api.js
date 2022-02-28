@@ -6,6 +6,7 @@ const products = [
         price: "$250",
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/041/114/products/veneta1-ce8a5280d50020d2f416126189454085-640-0.jpg",
         category: 'zapatos',
+        stock: 20,
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const products = [
         price: "$350",
         image: "https://static.zara.net/photos///2021/S/0/1/p/1193/003/403/2/w/563/1193003403_6_1_1.jpg?ts=1624607080719",
         category: 'indumentaria',
+        stock: 10,
     },
 ];
 const myPromise = new Promise(function(resolve, reject) {

@@ -26,7 +26,9 @@ export default function Menu() {
 						<NavLink to={`category/sale`} className="nav-link active" aria-current="page" href="#">Sale</NavLink>
 					</li>
 					<li className="nav-item">
+					<NavLink to={`/cart`} className="nav-link active" aria-current="page" href="#">
 					<CartWidget className="nav-link active p-3" aria-current="page" href="#"/>
+					</NavLink>
 					</li>
 
 				</ul>

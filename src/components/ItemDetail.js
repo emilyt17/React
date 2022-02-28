@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount"
-import React, { useState} from "react";
+import React, { useState, useContext} from "react";
+import { CartContext } from '../context/CartContext';
 
 
 export default function ItemDetail ({item}){
     const [conter , setConter] = useState();
+    const { addCart, cart } = useContext(CartContext);
 
-    function addItem(newItem){
-        console.log(newItem);
-        setConter(newItem);
+    function addItem(quantity){
+        
+        setConter(quantity);
+        addCart(quantity, item);
     
     }
 
@@ -26,7 +29,7 @@ export default function ItemDetail ({item}){
                              <small className="text-muted">{item.price} </small>
                              {
                                  ! conter ?
-                             <ItemCount stock ={5} initial={1} onAdd={addItem} /> :
+                             <ItemCount stock ={item.stock} initial={1} onAdd={addItem} /> :
                              <Link to ="/cart"> Ir al carrito</Link>
                              }
                              </div>
