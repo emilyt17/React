@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getProduct } from "../api/api";
 import ItemList from "./ItemList";
 import { useParams} from "react-router-dom";
-import { getDocs , collection } from "firebase/firestore";
-import { db } from "../firebase"
+
 
 function ItemListContainer () {
   const [products, setProducts] = useState([])

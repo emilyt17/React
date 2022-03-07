@@ -19,25 +19,14 @@ const CartContextProvider = ({ children }) => {
     };
 
 
-    const addPrice= (price, item) => {
-        if (repeatPrice(item.price) ) {
-
-            sumPrice(price, item);
-
-        } else {
-            setCart([...cart, { ...price, item }]);
-        }
-       
-    };
+    
     
 
     const repeatId = (id) => {
         const someId = cart.some((prod) => prod.id === id);
         return someId;
     };
-    const repeatPrice= (price) => {
-        const somePrice = cart.some((prod) => prod.price === price);
-    }
+    
     
 
 
@@ -50,18 +39,7 @@ const CartContextProvider = ({ children }) => {
         });
     };
 
-    const sumPrice = (price, item) => {
-        const precio = [...cart];
-        precio.forEach((producto) => {
-            if (producto.price === item.price) {
-                producto.price += price;
-            }
-        });
-    };
-
     
-    
-
 
     const clean = () => {
         setCart([]);
@@ -72,11 +50,22 @@ const CartContextProvider = ({ children }) => {
         setCart(cart.filter((producto) => producto.id !== id));
     };
 
+    const getCartTotalPrice = () => {
     
+        let totalPrice = 0;
+        for (let i = 0; i < cart.length; i++) {
+          
+          totalPrice += cart[i].price * cart[i].quantity;
+        }
+          return totalPrice;
+        
+        
+        
+    }
 
     return (
         <CartContext.Provider
-            value={{ cart, addCart, clean, deleteItem, addPrice }}
+            value={{ cart, addCart, clean, deleteItem, getCartTotalPrice }}
         >
             {children}
         </CartContext.Provider>
